@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perioperative Nursing Study Book</title>
+<style>
+:root{--bg:#f4f7f6;--card:#fff;--ink:#14262b;--mute:#5b6f74;--line:#d5e0de;--teal:#1b6b73;--teal-d:#124a50;--mark:#f2c14e;--ok:#2e7d4f;--bad:#b3402f;--okbg:#e5f3ea;--badbg:#f9e6e2}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1b1e;--card:#162a2e;--ink:#e6f0ee;--mute:#9bb2b6;--line:#2a4448;--teal:#5cc0c9;--teal-d:#8adbe2;--okbg:#173523;--badbg:#3a1d19}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font:16px/1.6 Georgia,"Times New Roman",serif;max-width:800px;margin:0 auto;padding:14px}
+h1,h2,h3,button,input,select,.ui{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{border-bottom:3px solid var(--teal);padding-bottom:10px}
+h1{font-size:1.25rem;margin:0 0 8px;color:var(--teal-d)}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+input,select{padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);font-size:.95rem}
+#q{flex:2 1 200px}#chs{flex:1 1 200px}
+.bar{height:8px;background:var(--line);border-radius:4px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s}
+.pl,.meta{font:.82rem system-ui,sans-serif;color:var(--mute)}
+nav{display:flex;gap:6px;margin:12px 0;position:sticky;top:0;background:var(--bg);padding:6px 0;z-index:2}
+nav button{flex:1;padding:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;font-weight:600;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.ch{font-size:1.1rem;margin:6px 0}
+.sec{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:6px;padding:12px 14px;margin-bottom:12px}
+.sec.done{border-left-color:var(--ok)}
+.sec.hit{box-shadow:0 0 0 3px var(--mark)}
+.sec h2{font-size:1.05rem;margin:0 0 4px}
+.pg{font:.8rem system-ui,sans-serif;color:var(--mute)}
+.sec ul{margin:8px 0;padding-left:20px}.sec li{margin:5px 0}
+.steps{display:flex;flex-wrap:wrap;gap:4px;list-style:none;padding:0!important}
+.steps li{margin:0;font:600 .8rem system-ui,sans-serif;background:var(--okbg);border:1px solid var(--teal);border-radius:14px;padding:3px 10px}
+.steps li+li::before{content:"› ";color:var(--mute)}
+.fig{font:.85rem system-ui,sans-serif;background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px 10px;color:var(--mute)}
+.fig img{max-width:100%;height:auto;display:block;border-radius:4px;cursor:zoom-in}
+.mk,.row button,.opt{font:600 .92rem system-ui,sans-serif;padding:9px 13px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.mk{border-color:var(--teal);background:transparent;color:var(--teal-d)}
+.done .mk{background:var(--ok);border-color:var(--ok);color:#fff}
+.pri{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important}
+.fc{min-height:170px;background:var(--card);border:2px solid var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:1.1rem;cursor:pointer;width:100%;color:var(--ink)}
+.fc.back{background:var(--teal);color:#fff}
+.row{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;font-weight:500}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.fb{font:.92rem/1.5 system-ui,sans-serif;background:var(--card);border-left:4px solid var(--mark);padding:8px 12px;border-radius:4px}
+.res{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;cursor:pointer;color:var(--ink);font:.92rem/1.5 system-ui,sans-serif}
+.res b{font-size:1rem}.res small{color:var(--mute);display:block}
+mark{background:var(--mark);color:#000;padding:0 1px;border-radius:2px}
+footer{margin-top:24px;padding-top:10px;border-top:1px solid var(--line);font:.8rem system-ui,sans-serif;color:var(--mute);text-align:center}
+.pr{background:none;border:0;color:var(--teal-d);text-decoration:underline;cursor:pointer;font:600 .85rem system-ui,sans-serif}
+@media print{header .tools,nav,.mk,.pr,.bar,.row,#q{display:none}.sec{break-inside:avoid;border:1px solid #999;border-left:4px solid #000}body{font-size:12pt;max-width:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1 id="bt"></h1>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search all chapters" aria-label="Search all chapters" autocomplete="off">
+    <select id="chs" aria-label="Choose chapter"></select>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="pb"></i></div>
+  <div class="pl" id="pt"></div>
+</header>
+<main id="main"></main>
+<footer>
+  <button class="pr" onclick="window.print()">Print this chapter’s notes</button><br>
+  Created by Yousuf Al Busaidi — 11764
+</footer>
+
+<script>var BOOK={list:[],add:function(c){this.list.push(c)}};</script>
+<script>
+/* ===== CONFIG: edit this when you add a chapter ===== */
+var CONFIG={
+  title:"Perioperative Nursing Study Book",
+  files:["chapters/ch01.js"],
+  plan:[[1,"Concepts Basic to Perioperative Nursing"],[2,"Patient Safety and Risk Management"],[3,"Workplace Issues and Staff Safety"],[4,"Infection Prevention and Control"],[5,"Anesthesia"],[6,"Positioning the Patient for Surgery"],[7,"Sutures, Sharps, and Instruments"],[8,"Surgical Modalities"],[9,"Wound Healing, Dressings, and Drains"],[10,"Postoperative Patient Care and Pain Management"],[11,"Gastrointestinal Surgery"],[12,"Surgery of the Biliary Tract, Pancreas, Liver, and Spleen"],[13,"Hernia Repair"],[14,"Gynecologic and Obstetric Surgery"],[15,"Genitourinary Surgery"]]
+};
+/* ===== shell ===== */
+var $=function(i){return document.getElementById(i)};
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+var st={ch:null,tab:"read",ci:0,back:false,qi:0,sc:0,ans:false};
+var done={},IDX=[];
+try{done=JSON.parse(localStorage.getItem("book-done")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("book-done",JSON.stringify(done))}catch(e){}}
+function byId(id){return BOOK.list.filter(function(c){return c.id===id})[0]}
+function cur(){return byId(st.ch)}
+
+function load(cb){var f=CONFIG.files,n=f.length;if(!n)return cb();f.forEach(function(u){var s=document.createElement("script");s.src=u;s.onload=s.onerror=function(){if(--n===0)cb()};document.head.appendChild(s)})}
+
+function buildIdx(){IDX=[];BOOK.list.forEach(function(c){
+  c.sections.forEach(function(s,i){IDX.push({c:c.id,k:"s",i:i,h:s.t,t:s.k.join(" "),p:s.p})});
+  c.cards.forEach(function(d,i){IDX.push({c:c.id,k:"c",i:i,h:d[0],t:d[1]})});
+  c.quiz.forEach(function(q,i){IDX.push({c:c.id,k:"q",i:i,h:q.q,t:q.o.join(" ")+" "+q.e})})})}
+
+function prog(){var tot=0,n=0;BOOK.list.forEach(function(c){tot+=c.sections.length;c.sections.forEach(function(_,i){if((done[c.id]||{})[i])n++})});
+  $("pb").style.width=(tot?n/tot*100:0)+"%";$("pt").textContent=n+" of "+tot+" sections read across "+BOOK.list.length+" chapter"+(BOOK.list.length===1?"":"s")+" available"}
+
+function menu(){$("chs").innerHTML=CONFIG.plan.map(function(p){var id="ch"+(p[0]<10?"0":"")+p[0],c=byId(id);
+  return '<option value="'+(c?id:"")+'"'+(c?"":" disabled")+(st.ch===id?" selected":"")+">"+p[0]+". "+esc(p[1])+(c?"":" (coming soon)")+"</option>"}).join("")}
+
+function render(){
+  menu();prog();var c=cur(),m=$("main");
+  if(!c){m.innerHTML='<p class="meta">No chapters loaded yet.</p>';return}
+  var tabs=[["read","Read"],["cards","Flashcards"],["quiz","Quiz"]];
+  var h='<p class="ch"><b>Chapter '+c.n+'</b> · '+esc(c.title)+' <span class="pg">'+esc(c.pages||"")+'</span></p><nav role="tablist">'+tabs.map(function(t){return '<button role="tab" data-t="'+t[0]+'" aria-selected="'+(st.tab===t[0])+'">'+t[1]+"</button>"}).join("")+"</nav>";
+  if(st.tab==="read")h+=viewRead(c);else if(st.tab==="cards")h+=viewCards(c);else h+=viewQuiz(c);
+  m.innerHTML=h;
+}
+function viewRead(c){var d=done[c.id]||{};return c.sections.map(function(s,i){
+  var steps=s.steps?'<ul class="steps">'+s.steps.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul>":"";
+  var f=s.fig;var fig="";
+  if(f&&typeof f==="object")fig='<p class="fig"><img src="'+esc(f.src)+'" alt="'+esc(f.alt||"")+'" loading="lazy" data-zoom="1"><br>'+esc(f.cap||"")+"</p>";
+  else if(f)fig='<p class="fig">'+esc(f)+"</p>";
+  return '<article class="sec'+(d[i]?" done":"")+'" id="s-'+i+'"><h2>'+esc(s.t)+' <span class="pg">'+esc(s.p)+"</span></h2><ul>"+s.k.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul>"+steps+fig+'<button class="mk" data-i="'+i+'">'+(d[i]?"Read ✓ (tap to undo)":"Mark as read")+"</button></article>"}).join("")}
+function viewCards(c){var k=c.cards[st.ci];return '<button class="fc'+(st.back?" back":"")+'" id="fc" aria-live="polite">'+esc(st.back?k[1]:k[0])+'</button><div class="meta" style="margin-top:8px">Card '+(st.ci+1)+" of "+c.cards.length+(st.back?" · answer":" · question")+'</div><div class="row"><button data-a="prev">Back</button><button class="pri" data-a="flip">Flip card</button><button data-a="next">Next</button><button data-a="shuf">Shuffle</button></div>'}
+function viewQuiz(c){
+  if(st.qi>=c.quiz.length)return '<div class="sec"><h2>Quiz complete</h2><p>You scored <b>'+st.sc+" of "+c.quiz.length+"</b>."+(st.sc<c.quiz.length?" Review the sections, then try again.":" Strong result.")+'</p><div class="row"><button class="pri" data-a="qr">Try again</button></div></div>';
+  var q=c.quiz[st.qi];return '<p class="meta">Question '+(st.qi+1)+" of "+c.quiz.length+" · score "+st.sc+'</p><h3 style="font-size:1.05rem">'+esc(q.q)+"</h3>"+q.o.map(function(o,i){return'<button class="opt" data-o="'+i+'">'+esc(o)+"</button>"}).join("")+'<div id="fb"></div>'}
+
+$("main").addEventListener("click",function(e){
+  var t=e.target,c=cur();if(!c)return;
+  var b=t.closest("nav button");if(b){st.tab=b.dataset.t;render();return}
+  b=t.closest(".mk");if(b){var i=b.dataset.i;done[c.id]=done[c.id]||{};done[c.id][i]=!done[c.id][i];save();var y=window.scrollY;render();window.scrollTo(0,y);return}
+  if(t.dataset.zoom){window.open(t.src,"_blank");return}
+  if(t.id==="fc"){st.back=!st.back;render();return}
+  b=t.closest("[data-a]");if(b){var a=b.dataset.a,n=c.cards.length;
+    if(a==="flip")st.back=!st.back;else if(a==="next"){st.ci=(st.ci+1)%n;st.back=false}else if(a==="prev"){st.ci=(st.ci-1+n)%n;st.back=false}
+    else if(a==="shuf"){c.cards.sort(function(){return Math.random()-.5});st.ci=0;st.back=false}
+    else if(a==="qn"){st.qi++;st.ans=false}else if(a==="qr"){st.qi=0;st.sc=0;st.ans=false}
+    render();return}
+  b=t.closest(".opt");if(b&&!st.ans){st.ans=true;var q=c.quiz[st.qi],k=+b.dataset.o;
+    document.querySelectorAll(".opt").forEach(function(x,j){if(j===q.a)x.classList.add("ok");else if(j===k)x.classList.add("bad")});
+    if(k===q.a)st.sc++;
+    $("fb").innerHTML='<p class="fb"><b>'+(k===q.a?"Correct. ":"Not quite. ")+"</b>"+esc(q.e)+'</p><div class="row"><button class="pri" data-a="qn">'+(st.qi===c.quiz.length-1?"See score":"Next question")+"</button></div>"}
+});
+
+function open_(id,tab,idx){st.ch=id;st.tab=tab;st.qi=0;st.sc=0;st.ans=false;st.back=false;st.ci=(tab==="cards"&&idx)||0;$("q").value="";render();
+  if(tab==="read"&&idx!=null){var el=$("s-"+idx);if(el){el.scrollIntoView({block:"start"});el.classList.add("hit");setTimeout(function(){el.classList.remove("hit")},2200)}}else window.scrollTo(0,0);
+  try{history.replaceState(null,"","#"+id)}catch(e){}}
+$("chs").onchange=function(){if(this.value)open_(this.value,"read")};
+
+function search(){
+  var raw=$("q").value.trim().toLowerCase();if(raw.length<2){render();return}
+  var terms=raw.split(/\s+/),hits=[];
+  IDX.forEach(function(r){var hay=(r.h+" "+r.t).toLowerCase();if(terms.every(function(t){return hay.indexOf(t)>-1}))hits.push({r:r,s:terms.every(function(t){return r.h.toLowerCase().indexOf(t)>-1})?0:1})});
+  hits.sort(function(a,b){return a.s-b.s});
+  var kind={s:"Section",c:"Flashcard",q:"Quiz"};
+  var hl=function(s){var o=esc(s);terms.forEach(function(t){o=o.replace(new RegExp("("+esc(t).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"),"<mark>$1</mark>")});return o};
+  var snip=function(r){var t=r.t,p=t.toLowerCase().indexOf(terms[0]);var a=Math.max(0,p-50);return(a?"…":"")+t.slice(a,a+160)+(t.length>a+160?"…":"")};
+  var m=$("main");
+  m.innerHTML='<p class="meta">'+hits.length+" result"+(hits.length===1?"":"s")+" for “"+esc(raw)+"”</p>"+(hits.length?hits.slice(0,40).map(function(h,n){var r=h.r,c=byId(r.c);return'<button class="res" data-n="'+n+'"><b>'+hl(r.h)+"</b><small>Chapter "+c.n+" · "+kind[r.k]+(r.p?" · "+esc(r.p):"")+"</small>"+hl(snip(r))+"</button>"}).join(""):'<p>Nothing found. Try a shorter or different word.</p>');
+  m._hits=hits.slice(0,40);
+}
+$("q").addEventListener("input",search);
+$("main").addEventListener("click",function(e){var b=e.target.closest(".res");if(!b)return;var h=this._hits[+b.dataset.n].r;open_(h.c,h.k==="s"?"read":h.k==="c"?"cards":"quiz",h.i)});
+
+$("bt").textContent=CONFIG.title;
+load(function(){BOOK.list.sort(function(a,b){return a.n-b.n});buildIdx();
+  var start=(location.hash||"").slice(1);st.ch=byId(start)?start:(BOOK.list[0]||{}).id;render()});
+</script>
+</body>
+</html>
